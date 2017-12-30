@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class FPSGame : ModuleRules
+public class AssaultSectorSix : ModuleRules
 {
-	public FPSGame(ReadOnlyTargetRules Target) : base(Target)
+	public AssaultSectorSix(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 

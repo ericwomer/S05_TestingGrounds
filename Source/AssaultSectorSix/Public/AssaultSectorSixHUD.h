@@ -4,12 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
-#include "FPSHUD.generated.h"
+#include "AssaultSectorSixHUD.generated.h"
 
 class UTexture2D;
 
 UCLASS()
-class AFPSHUD : public AHUD
+class AAssaultSectorSixHUD : public AHUD
 {
 	GENERATED_BODY()
 
@@ -20,7 +20,7 @@ protected:
 
 public:
 
-	AFPSHUD();
+	AAssaultSectorSixHUD();
 
 	/** Primary draw call for the HUD */
 	virtual void DrawHUD() override;

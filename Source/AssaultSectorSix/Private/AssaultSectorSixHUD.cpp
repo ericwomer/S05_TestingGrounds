@@ -1,13 +1,13 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
-#include "FPSHUD.h"
+#include "AssaultSectorSixHUD.h"
 #include "Engine/Canvas.h"
 #include "Engine/Texture2D.h"
 #include "TextureResource.h"
 #include "CanvasItem.h"
 #include "UObject/ConstructorHelpers.h"
 
-AFPSHUD::AFPSHUD()
+AAssaultSectorSixHUD::AAssaultSectorSixHUD()
 {
 	// Set the crosshair texture
 	static ConstructorHelpers::FObjectFinder<UTexture2D> CrosshairTexObj(TEXT("/Game/UI/FirstPersonCrosshair"));
@@ -15,7 +15,7 @@ AFPSHUD::AFPSHUD()
 }
 
 
-void AFPSHUD::DrawHUD()
+void AAssaultSectorSixHUD::DrawHUD()
 {
 	Super::DrawHUD();
 

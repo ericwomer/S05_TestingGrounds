@@ -4,18 +4,18 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "FPSCharacter.generated.h"
+#include "AssaultSectorSixCharacter.generated.h"
 
 class UInputComponent;
 class USkeletalMeshComponent;
 class UCameraComponent;
-class AFPSProjectile;
+class AAssaultSectorSixProjectile;
 class USoundBase;
 class UAnimSequence;
 
 
 UCLASS()
-class AFPSCharacter : public ACharacter
+class AAssaultSectorSixCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -34,11 +34,11 @@ protected:
 	UCameraComponent* CameraComponent;
 
 public:
-	AFPSCharacter();
+	AAssaultSectorSixCharacter();
 
 	/** Projectile class to spawn */
 	UPROPERTY(EditDefaultsOnly, Category="Projectile")
-	TSubclassOf<AFPSProjectile> ProjectileClass;
+	TSubclassOf<AAssaultSectorSixProjectile> ProjectileClass;
 
 	/** Sound to play each time we fire */
 	UPROPERTY(EditDefaultsOnly, Category="Gameplay")

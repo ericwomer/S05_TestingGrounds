@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "FPSProjectile.generated.h"
+#include "AssaultSectorSixProjectile.generated.h"
 
 
 class UProjectileMovementComponent;
@@ -12,7 +12,7 @@ class USphereComponent;
 
 
 UCLASS()
-class AFPSProjectile : public AActor
+class AAssaultSectorSixProjectile : public AActor
 {
 	GENERATED_BODY()
 
@@ -28,7 +28,7 @@ protected:
 
 public:
 
-	AFPSProjectile();
+	AAssaultSectorSixProjectile();
 
 	/** called when projectile hits something */
 	UFUNCTION()

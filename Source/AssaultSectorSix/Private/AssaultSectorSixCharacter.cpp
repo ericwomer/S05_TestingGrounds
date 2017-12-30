@@ -1,14 +1,14 @@
 // Copyright 1998-2017 Epic Games, Inc. All Rights Reserved.
 
-#include "FPSCharacter.h"
-#include "FPSProjectile.h"
+#include "AssaultSectorSixCharacter.h"
+#include "AssaultSectorSixProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
 
 
-AFPSCharacter::AFPSCharacter()
+AAssaultSectorSixCharacter::AAssaultSectorSixCharacter()
 {
 	// Create a CameraComponent	
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
@@ -30,23 +30,23 @@ AFPSCharacter::AFPSCharacter()
 }
 
 
-void AFPSCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AAssaultSectorSixCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	// set up gameplay key bindings
 	check(PlayerInputComponent);
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AFPSCharacter::Fire);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AAssaultSectorSixCharacter::Fire);
 
-	PlayerInputComponent->BindAxis("MoveForward", this, &AFPSCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AFPSCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &AAssaultSectorSixCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AAssaultSectorSixCharacter::MoveRight);
 
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 }
 
 
-void AFPSCharacter::Fire()
+void AAssaultSectorSixCharacter::Fire()
 {
 	// try and fire a projectile
 	if (ProjectileClass)
@@ -59,7 +59,7 @@ void AFPSCharacter::Fire()
 		ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 
 		// spawn the projectile at the muzzle
-		GetWorld()->SpawnActor<AFPSProjectile>(ProjectileClass, MuzzleLocation, MuzzleRotation, ActorSpawnParams);
+		GetWorld()->SpawnActor<AAssaultSectorSixProjectile>(ProjectileClass, MuzzleLocation, MuzzleRotation, ActorSpawnParams);
 	}
 
 	// try and play the sound if specified
@@ -81,7 +81,7 @@ void AFPSCharacter::Fire()
 }
 
 
-void AFPSCharacter::MoveForward(float Value)
+void AAssaultSectorSixCharacter::MoveForward(float Value)
 {
 	if (Value != 0.0f)
 	{
@@ -91,7 +91,7 @@ void AFPSCharacter::MoveForward(float Value)
 }
 
 
-void AFPSCharacter::MoveRight(float Value)
+void AAssaultSectorSixCharacter::MoveRight(float Value)
 {
 	if (Value != 0.0f)
 	{
